@@ -83,6 +83,11 @@ Then from a new terminal, you can run directly `exp-match2sample` and it starts!
 
 1. Run `xrandr` in terminal
 
+### Set up audio
+
+1. (linux) `pip install pyo`
+2. launch psychopy GUI, go to preferences, and re-order preffered sound thingies so PYO is first
+
 ## How to run
 
 ### Linux
