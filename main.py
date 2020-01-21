@@ -11,6 +11,7 @@ import math
 from screen import Screen
 from scorer import Scorer
 from trigger import Trigger
+from recorder import Recorder
 from psychopy import core, event, sound
 from psychopy.hardware import keyboard
 
@@ -49,6 +50,9 @@ trigger = Trigger(CONF["trigger"]["serial_device"],
 logging.info('Initialization completed')
 
 sentences = sentences[CONF["task"]["language"]]
+
+# recorder = Recorder(CONF)
+
 
 #########################################################################
 
@@ -131,7 +135,9 @@ for indx, sentence in enumerate(sentences):
     datalog["readingTime"] = key[0].rt
 
     # start recording for 10 seconds
-    # trigger
+    # datalog["filename"] = recorder.set_filename(indx)
+    # recorder.play()
+
     trigger.send("StartRecording")
     trialTimer = core.CountdownTimer(CONF["task"]["duration"])
     now = 1
@@ -139,6 +145,10 @@ for indx, sentence in enumerate(sentences):
         now = trialTimer.getTime()
         percent = now / CONF["task"]["duration"]
         screen.shrink_time(percent)
+        key = kb.getKeys(waitRelease=False)
+        if key:
+            answer = key[0].name
+            quitExperimentIf(answer == 'q')
 
     trigger.send("EndTime")
 

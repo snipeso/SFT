@@ -9,11 +9,13 @@ filepath = os.path.join("output", "recordings")
 if not os.path.exists(filepath):
     os.makedirs(filepath)
 
-filename = os.path.join(filepath, "test1.wav")
-f = Mic.record(3, filename=filename)
+for n in [1, 2, 3]:
+    filename = os.path.join(filepath,  str(n) + "test.wav")
+    f = Mic.record(3, filename=filename)
+    print("recording ", n)
+    core.wait(3)
 
 
-core.wait(3)
 Mic.reset()
 
 #!/usr/bin/env python

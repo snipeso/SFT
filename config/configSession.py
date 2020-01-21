@@ -6,7 +6,7 @@ import git
 CONF = {
     "participant": os.environ.get("participant", "00"),
     "session": os.environ.get("session", "0"),
-    "version": ["main", "demo", "debug"][1],
+    "version": ["main", "demo", "debug"][2],
     "screen": {
         # screen size when fullscreen
         "resolution": [3840, 2160],
@@ -58,8 +58,8 @@ else:
     CONF.update({
         "showInstructions": False,
         "sendTriggers": False,
-        "logginLevel": logging.INFO})
-    CONF["screen"]["full"] = True
+        "loggingLevel": logging.INFO})
+    CONF["screen"]["full"] = False
     CONF["timing"]["rest"] = 1
-    CONF["screen"]["resolution"] = [1000, 1000],
-    CONF["screen"]["size"] = [10, 10],
+    CONF["screen"]["resolution"] = [1000, 1000]
+    CONF["screen"]["size"] = (10, 10)

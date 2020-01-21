@@ -2,6 +2,7 @@ import os
 from config.configSession import CONF
 
 
+print(CONF["screen"]["size"])
 CONF.update({
     "task": {
         "name": "SFT",
