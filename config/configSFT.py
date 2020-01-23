@@ -26,7 +26,9 @@ sftCONF = {
         "timeWidth": 10,
         "timeColor": "green",
         "timeBackgroundColor": "grey",
-        "timePos": (0, -CONF["screen"]["size"][1]/2+3)
+        "timePos": (0, -CONF["screen"]["size"][1]/2+3),
+        "sentencePos": (0, 0),
+        "sentenceHeight": 0.5
     }
 }
 

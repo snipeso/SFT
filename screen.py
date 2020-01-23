@@ -26,53 +26,44 @@ class Screen:
             units="cm"
         )
 
-        # set up instructions and overview
+      # set up instructions and overview
         self.task = visual.TextStim(self.window,
-                                    # pos=[0, 0],
                                     text=CONF["task"]["name"],
                                     alignHoriz='center',
                                     alignVert='center',
-                                    height=.5,
-                                    pos=(0, 0),  # TEMP
-
+                                    height=CONF["instructionSizes"]["taskHeight"],
+                                    pos=CONF["instructionSizes"]["taskPos"],
                                     units="cm"
                                     )
         self.session = visual.TextStim(self.window,
                                        text="P" + CONF["participant"] +
-                                       " Session " + CONF["session"],
-                                       pos=(0, -3),  # TEMP
-                                       height=.5,
+                                       " Session " +
+                                       CONF["session"] + " " +
+                                       CONF["version"],
+                                       pos=CONF["instructionSizes"]["sessionPos"],
+                                       height=CONF["instructionSizes"]["sessionHeight"],
                                        alignHoriz='center',
                                        alignVert='center',
                                        units="cm"
-                                       )  # TODO: add this to instructions page!
+                                       )
 
         self.instructions = visual.TextStim(
-            self.window, text=CONF["instructions"]["text"], height=.5, units="cm")
+            self.window, text=CONF["instructions"]["text"], height=CONF["instructionSizes"]["instructionsHeight"], units="cm")
 
         self.startPrompt = visual.TextStim(
-            self.window, text=CONF["instructions"]["startPrompt"], height=.5, units="cm", pos=(0, -CONF["screen"]["size"][1]/2+3))
+            self.window, text=CONF["instructions"]["startPrompt"], height=CONF["instructionSizes"]["startPromptHeight"], units="cm", pos=(0, -CONF["screen"]["size"][1]/2+3))
 
         self.cue = visual.TextStim(self.window)
 
         # create stimuli
         self.sentence = visual.TextStim(
-            self.window, height=.5, units="cm", pos=(0, 0))
+            self.window, height=CONF["stimuli"]["sentenceHeight"], units="cm", pos=CONF["stimuli"]["sentencePos"])
 
         self.start_instructions = visual.TextStim(
             self.window,
             text=CONF["instructions"]["continue"],
-            height=.5, units="cm", pos=(0, -CONF["screen"]["size"][1]/2+3))  # TODO: move pos and height to CONF
+            height=CONF["instructionSizes"]["instructionsHeight"], units="cm", pos=(0, -CONF["screen"]["size"][1]/2+3))
 
-        # self.time_bar_background = visual.Rect(
-        #     self.window,
-        #     height=CONF["stimuli"]["timeHeight"],
-        #     width=CONF["stimuli"]["timeWidth"],
-        #     fillColor=CONF["stimuli"]["timeBackgroundColor"],
-        #     lineColor=CONF["stimuli"]["timeBackgroundColor"],
-        #     units="cm",
-        #     pos=CONF["stimuli"]["timePos"]
-        # )
         self.time_bar = visual.Rect(
             self.window,
             height=CONF["stimuli"]["timeHeight"],

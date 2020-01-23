@@ -107,6 +107,8 @@ core.wait(CONF["timing"]["cue"])
 # Main experiment
 #################
 
+random.shuffle(sentences)
+
 # Loop through sentences
 for indx, sentence in enumerate(sentences):
 
