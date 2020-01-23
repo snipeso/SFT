@@ -64,6 +64,7 @@ def quitExperimentIf(shouldQuit):
         trigger.send("Quit")
         scorer.getScore()
         logging.info('quit experiment')
+        trigger.reset()
         sys.exit(2)
 
 
@@ -80,29 +81,29 @@ def onFlip(stimName, logName):
 
 screen.show_blank()
 
-# # Display overview of session
-# screen.show_overview()
-# core.wait(CONF["timing"]["overview"])
+# Display overview of session
+screen.show_overview()
+core.wait(CONF["timing"]["overview"])
 
-# # Optionally, display instructions
-# print(CONF["showInstructions"], CONF["version"])
-# if CONF["showInstructions"]:
-#     screen.show_instructions()
-#     key = event.waitKeys()
-#     quitExperimentIf(key[0] == 'q')
+# Optionally, display instructions
+print(CONF["showInstructions"], CONF["version"])
+if CONF["showInstructions"]:
+    screen.show_instructions()
+    key = event.waitKeys()
+    quitExperimentIf(key[0] == 'q')
 
-# # Blank screen for initial rest
-# screen.show_blank()
-# logging.info('Starting blank period')
+# Blank screen for initial rest
+screen.show_blank()
+logging.info('Starting blank period')
 
-# trigger.send("StartBlank")
-# core.wait(CONF["timing"]["rest"])
-# trigger.send("EndBlank")
+trigger.send("StartBlank")
+core.wait(CONF["timing"]["rest"])
+trigger.send("EndBlank")
 
-# # Cue start of the experiment
-# screen.show_cue("START")
-# trigger.send("Start")
-# core.wait(CONF["timing"]["cue"])
+# Cue start of the experiment
+screen.show_cue("START")
+trigger.send("Start")
+core.wait(CONF["timing"]["cue"])
 
 
 #################
@@ -110,13 +111,12 @@ screen.show_blank()
 #################
 
 # Loop through sentences
-
 for indx, sentence in enumerate(sentences):
 
     logging.info("Sentence: %s", sentence)
 
     # trial trigger
-    trigger.sendTriggerId()
+    datalog["trialID"] = trigger.sendTriggerId()
 
     # show sentence
     screen.window.callOnFlip(onFlip, "Stim", "showSentence")

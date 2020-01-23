@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -131,10 +130,3 @@ dmypy.json
 
 # folders
 output/
-=======
-env
-*.pyc
-output
-longword.py
-.vscode
->>>>>>> fcd8dcb9d5a697a6f48bc4edc0a392abb73570f0
