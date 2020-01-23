@@ -9,7 +9,6 @@ import sys
 import math
 
 from screen import Screen
-from scorer import Scorer
 from trigger import Trigger
 from recorder import Recorder
 from psychopy import core, event, sound
@@ -42,7 +41,6 @@ mainClock = core.MonotonicClock()  # starts clock for timestamping events
 
 Alarm = sound.Sound(os.path.join('sounds', CONF["instructions"]["alarm"]),
                     stereo=True)
-scorer = Scorer()
 
 trigger = Trigger(CONF["trigger"]["serial_device"],
                   CONF["sendTriggers"], CONF["trigger"]["labels"])
@@ -62,7 +60,6 @@ def quitExperimentIf(shouldQuit):
 
     if shouldQuit:
         trigger.send("Quit")
-        scorer.getScore()
         logging.info('quit experiment')
         trigger.reset()
         sys.exit(2)
@@ -180,5 +177,4 @@ trigger.send("EndBlank")
 
 
 logging.info('Finished')
-scorer.getScore()
 trigger.reset()
