@@ -49,7 +49,7 @@ logging.info('Initialization completed')
 
 sentences = sentences[CONF["task"]["language"]]
 
-# recorder = Recorder(CONF)
+recorder = Recorder(CONF)
 
 
 #########################################################################
@@ -135,8 +135,8 @@ for indx, sentence in enumerate(sentences):
     datalog["readingTime"] = key[0].rt
 
     # start recording for 10 seconds
-    # datalog["filename"] = recorder.set_filename(indx)
-    # recorder.play()
+    datalog["filename"] = recorder.set_filename(indx)
+    recorder.play()
 
     trigger.send("StartRecording")
     trialTimer = core.CountdownTimer(CONF["task"]["duration"])
