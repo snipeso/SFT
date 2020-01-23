@@ -6,7 +6,7 @@ import git
 CONF = {
     "participant": os.environ.get("participant", "00"),
     "session": os.environ.get("session", "0"),
-    "version": ["main", "demo", "debug"][2],
+    "version": ["main", "demo", "debug"][1],
     "screen": {
         # screen size when fullscreen
         "resolution": [3840, 2160],

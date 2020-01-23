@@ -15,8 +15,8 @@ sentences = {
         "She sells seashells by the seashore.",
         "A proper cup of coffee from a proper copper coffee pot.",
         "I wish to wash my Irish wristwatch.",
-        "Fred fed Ted bread, and Ted fed Fred Bread.",
-        "A good cook could cook as much cookies as a good cook who could cook cookies."
+        "Fred fed Ted bread, and Ted fed Fred bread.",
+        "A good cook could cook as much cookies as a good cook who could cook cookies.",
         "Six sick hicks nick six slick bricks with picks and sticks.",
         "You know New York, you need New York,  you know you need unique New York.",
         "A skunk sat on a stump and thunk the stump stunk."

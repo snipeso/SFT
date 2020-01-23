@@ -78,6 +78,7 @@ def onFlip(stimName, logName):
 # Introduction
 ##############
 
+screen.show_blank()
 
 # # Display overview of session
 # screen.show_overview()
