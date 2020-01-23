@@ -40,7 +40,7 @@ kb = keyboard.Keyboard()
 
 mainClock = core.MonotonicClock()  # starts clock for timestamping events
 
-Alarm = sound.Sound(os.path.join('sounds', CONF["sounds"]["alarm"]),
+Alarm = sound.Sound(os.path.join('sounds', CONF["instructions"]["alarm"]),
                     stereo=True)
 scorer = Scorer()
 
