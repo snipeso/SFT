@@ -12,7 +12,7 @@ sftCONF = {
         "duration": {"versionMain": 10, "versionDemo": 10, "versionDebug": 2},
     },
     "instructions": {
-        "text": "You will be presented with 20 tongue twisters, one at a time. Read the sentence, and when you're ready, press 'enter' to start. Read out loud the sentence as many times as you can in 10 seconds before the sentence disappears.",
+        "text": "You will be presented with 20 tongue twisters, one at a time. Read the sentence, and when you're ready, press 'enter' to start. Read out loud the sentence as fast and accurately as you can in 10 seconds before the sentence disappears.",
         "startPrompt": "Press any key to continue. Press q to quit.",
         "continue": "Press enter to start.",
         "alarm": "horn.wav",

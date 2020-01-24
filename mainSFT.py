@@ -49,7 +49,8 @@ logging.info('Initialization completed')
 
 sentences = sentences[CONF["task"]["language"]]
 
-recorder = Recorder(CONF)
+if CONF["version"] == "main":
+    recorder = Recorder(CONF)
 
 
 #########################################################################
@@ -117,6 +118,8 @@ for indx, sentence in enumerate(sentences):
     # trial trigger
     datalog["trialID"] = trigger.sendTriggerId()
 
+    hackToRemoveKeyPresses = kb.getKeys()
+
     # show sentence
     screen.window.callOnFlip(onFlip, "Stim", "showSentence")
     screen.start_sentence(sentence)
@@ -135,8 +138,9 @@ for indx, sentence in enumerate(sentences):
     datalog["readingTime"] = key[0].rt
 
     # start recording for 10 seconds
-    datalog["filename"] = recorder.set_filename(indx)
-    recorder.play()
+    if CONF["version"] == "main":
+        datalog["filename"] = recorder.set_filename(indx)
+        recorder.play()
 
     trigger.send("StartRecording")
     trialTimer = core.CountdownTimer(CONF["task"]["duration"])
