@@ -29,7 +29,8 @@ sftCONF = {
         "timeBackgroundColor": "grey",
         "timePos": (0, -CONF["screen"]["size"][1]/2+3),
         "sentencePos": (0, 0),
-        "sentenceHeight": 0.5
+        "sentenceHeight": 0.5,
+        "exampleSentence": "How much wood could a woodchuck chuck if a woodchuck could chuck wood?"
     }
 }
 

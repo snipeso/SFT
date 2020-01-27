@@ -21,5 +21,5 @@ sentences = {
         "You know New York, you need New York,  you know you need unique New York.",
         "A skunk sat on a stump and thunk the stump stunk."
     ],
-    "German": []
+    "German": [],
 }

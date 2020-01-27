@@ -114,6 +114,9 @@ core.wait(CONF["timing"]["cue"])
 
 random.shuffle(sentences)
 
+if CONF["version"] == "demo":
+    sentences = [CONF["stimuli"]["exampleSentence"]]
+
 # Loop through sentences
 for indx, sentence in enumerate(sentences):
 
