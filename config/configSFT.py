@@ -16,6 +16,7 @@ sftCONF = {
         "startPrompt": "Press any key to continue. Press q to quit.",
         "continue": "Press enter to start.",
         "alarm": "horn.wav",
+        "questionnaireReminder": "answerQuestionnaire.wav"
     },
     "pause": {
         "backgroundColor": "black",

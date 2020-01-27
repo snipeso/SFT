@@ -42,6 +42,10 @@ mainClock = core.MonotonicClock()  # starts clock for timestamping events
 Alarm = sound.Sound(os.path.join('sounds', CONF["instructions"]["alarm"]),
                     stereo=True)
 
+questionnaireReminder = sound.Sound(os.path.join(
+    'sounds', CONF["instructions"]["questionnaireReminder"]), stereo=True)
+
+
 trigger = Trigger(CONF["trigger"]["serial_device"],
                   CONF["sendTriggers"], CONF["trigger"]["labels"])
 
@@ -184,3 +188,6 @@ trigger.send("EndBlank")
 
 logging.info('Finished')
 trigger.reset()
+
+questionnaireReminder.play()
+core.wait(2)
