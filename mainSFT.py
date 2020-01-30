@@ -29,11 +29,14 @@ logging.basicConfig(
     format='%(asctime)s-%(levelname)s-%(message)s',
 )  # This is a log for debugging the script, and prints messages to the terminal
 
+trigger = Trigger(CONF["trigger"]["serial_device"],
+                  CONF["sendTriggers"], CONF["trigger"]["labels"])
+
 screen = Screen(CONF)
 
 datalog = Datalog(OUTPUT_FOLDER=os.path.join(
-    'output', datetime.datetime.now(
-    ).strftime("%Y-%m-%d")), CONF=CONF)  # This is for saving data
+    'output', CONF["participant"] + "_" + CONF["session"],
+    datetime.datetime.now().strftime("%Y-%m-%d")), CONF=CONF)  # This is for saving data
 
 kb = keyboard.Keyboard()
 
@@ -45,9 +48,6 @@ Alarm = sound.Sound(os.path.join('sounds', CONF["instructions"]["alarm"]),
 questionnaireReminder = sound.Sound(os.path.join(
     'sounds', CONF["instructions"]["questionnaireReminder"]), stereo=True)
 
-
-trigger = Trigger(CONF["trigger"]["serial_device"],
-                  CONF["sendTriggers"], CONF["trigger"]["labels"])
 
 logging.info('Initialization completed')
 
