@@ -19,6 +19,7 @@ from config.configSFT import CONF
 
 from stimuli.sentences import sentences
 
+
 #########################################################################
 
 ######################################
