@@ -4,9 +4,9 @@ from config.updateConfig import UpdateConfig
 updateCofig = UpdateConfig()
 CONF = updateCofig.getConfig()
 
-sftCONF = {
+spftCONF = {
     "task": {
-        "name": "SFT",
+        "name": "SpFT",
         "language": ["English", "German"][0],
         # in seconds
         "duration": {"versionMain": 10, "versionDemo": 10, "versionDebug": 2},
@@ -34,7 +34,7 @@ sftCONF = {
     }
 }
 
-sftTriggers = {
+spftTriggers = {
     "StartRecording": 10,
     "EndTime": 11
 }
@@ -44,6 +44,6 @@ CONF["trigger"]["labels"]["StartRecording"] = 0x0A
 CONF["trigger"]["labels"]["EndTime"] = 0x0B
 
 
-updateCofig.addContent(sftCONF)
-updateCofig.addTriggers(sftTriggers)
+updateCofig.addContent(spftCONF)
+updateCofig.addTriggers(spftTriggers)
 CONF = updateCofig.getConfig()

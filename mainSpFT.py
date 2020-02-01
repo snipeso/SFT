@@ -1,4 +1,4 @@
-# SFT
+# SpFT
 
 import logging
 import os
@@ -15,7 +15,7 @@ from psychopy import core, event, sound
 from psychopy.hardware import keyboard
 
 from datalog import Datalog
-from config.configSFT import CONF
+from config.configSpFT import CONF
 
 from stimuli.sentences import sentences
 
