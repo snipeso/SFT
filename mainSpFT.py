@@ -163,6 +163,8 @@ for indx, sentence in enumerate(sentences):
 
     trigger.send("EndTime")
 
+    datalog.flush()
+
     # show blank
     screen.show_blank()
 
