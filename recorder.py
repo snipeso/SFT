@@ -8,7 +8,7 @@ class Recorder:
     def __init__(self, CONF):
         "Initialize microphone"
         path = os.path.join("output", "recordings",
-                            datetime.datetime.now().strftime("%Y-%m-%d"))
+                            CONF["participant"] + "_" + CONF["session"])
         if not os.path.exists(path):
             os.makedirs(path)
         self.path = path
